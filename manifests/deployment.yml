@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nguyenvanlamappazurepipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nguyenvanlamappazurepipeline
+  template:
+    metadata:
+      labels:
+        app: nguyenvanlamappazurepipeline 
+    spec:
+      containers:
+        - name: nguyenvanlamappazurepipeline 
+          image: mycontainerregistryjonathan.azurecr.io/nguyenvanlamappazurepipeline
+          ports:
+          - containerPort: 8080
